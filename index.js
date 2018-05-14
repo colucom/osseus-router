@@ -3,7 +3,7 @@ const path = require('path')
 const init = function (osseus) {
   return new Promise((resolve, reject) => {
     const router = require(path.join(__dirname, '/lib/router'))(osseus.config)
-    Object.assign(this, router)
+    osseus.server.app.use(router)
     resolve(this)
   })
 }
