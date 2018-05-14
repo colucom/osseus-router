@@ -1,0 +1,19 @@
+{
+  "name": "osseus-router",
+  "version": "0.0.1",
+  "description": "Osseus Router",
+  "scripts": {
+    "build": "npm install",
+    "test": "standard"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colucom/osseus-router.git"
+  },
+  "author": "LiorRabin",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
