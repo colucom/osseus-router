@@ -41,17 +41,17 @@ Optional:
 {
   "/examples/get": {
     "GET": {
-      "route": "exampleGET",
-      "policy": "global:firstPolicy"
+      "policy": "global:firstPolicy",
+      "route": "exampleGET"
     }
   },
   "/examples/post": {
     "POST": {
-      "route": "examplePOST",
       "policy": [
         "global:firstPolicy",
         "global:secondPolicy"
-      ]
+      ],
+      "route": "examplePOST"
     }
   }
 }
