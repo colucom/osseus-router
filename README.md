@@ -39,36 +39,25 @@ Optional:
 
 ```json
 {
-  "/examples/get": {
+  "/example": {
     "GET": {
       "policy": "global:firstPolicy",
       "route": "exampleGET"
-    }
-  },
-  "/examples/post": {
+    },
     "POST": {
       "policy": [
         "global:firstPolicy",
         "global:secondPolicy"
       ],
-      "route": "examplePOST"
+      "route": "./controllers/AnotherController:examplePOST"
     }
   }
 }
 ```
 
-`/controllers/ExamplesController.js`:
+***Note***
 
-```javascript
-module.exports = {
-  exampleGET: (req, res, next) => {
-    res.send({called: 'exampleGET'})
-  },
-  examplePOST: (req, res, next) => {
-    res.send({called: 'examplePOST'})
-  }
-}
-```
+*By default all routes in `/routes/example.json` are assumed to be in `/controllers/ExamplesController.js` but in case you want to use a route from another controller need to specify its location*
 
 `/policy/global.js`:
 
@@ -87,6 +76,26 @@ module.exports = {
 }
 ```
 
+`/controllers/ExamplesController.js`:
+
+```javascript
+module.exports = {
+  examplePOST: (req, res, next) => {
+    res.send({called: 'examplePOST', policies: req.policies})
+  }
+}
+```
+
+`/controllers/AnotherController.js`:
+
+```javascript
+module.exports = {
+  examplePOST: (req, res, next) => {
+    res.send({called: 'examplePOST', policies: req.policies})
+  }
+}
+```
+
 Running:
 
 ```bash
@@ -98,7 +107,7 @@ Will start your application and listen on 8080.
 Now, let's send some test requests and see what we get:
 
 ```bash
-$ curl 0:3000/examples/get
+$ curl 0:3000/example
 ```
 
 will result in:
@@ -110,7 +119,7 @@ $ {"called":"exampleGET","policies":["firstPolicy"]}
 and:
 
 ```bash
-$ curl -XPOST 0:3000/examples/post
+$ curl -XPOST 0:3000/example
 ```
 
 will result in:
