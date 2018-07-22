@@ -62,16 +62,18 @@ Optional:
 `/policy/global.js`:
 
 ```javascript
-module.exports = {
-  firstPolicy: (req, res, next) => {
-    req.policies = req.policies || []
-    req.policies.push('firstPolicy')
-    next()
-  },
-  secondPolicy: (req, res, next) => {
-    req.policies = req.policies || []
-    req.policies.push('secondPolicy')
-    next()
+module.exports = (osseus) => {
+  return {
+    firstPolicy: (req, res, next) => {
+      req.policies = req.policies || []
+      req.policies.push('firstPolicy')
+      next()
+    },
+    secondPolicy: (req, res, next) => {
+      req.policies = req.policies || []
+      req.policies.push('secondPolicy')
+      next()
+    }
   }
 }
 ```
@@ -79,9 +81,11 @@ module.exports = {
 `/controllers/ExamplesController.js`:
 
 ```javascript
-module.exports = {
-  examplePOST: (req, res, next) => {
-    res.send({called: 'examplePOST', policies: req.policies})
+module.exports = (osseus) => {
+  return {
+    examplePOST: (req, res, next) => {
+      res.send({called: 'examplePOST', policies: req.policies})
+    }
   }
 }
 ```
@@ -89,9 +93,11 @@ module.exports = {
 `/controllers/AnotherController.js`:
 
 ```javascript
-module.exports = {
-  examplePOST: (req, res, next) => {
-    res.send({called: 'examplePOST', policies: req.policies})
+module.exports = (osseus) => {
+  return {
+    examplePOST: (req, res, next) => {
+      res.send({called: 'examplePOST', policies: req.policies})
+    }
   }
 }
 ```

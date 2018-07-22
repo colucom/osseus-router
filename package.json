@@ -17,6 +17,6 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "json-routing": "^2.0.10"
+    "json-routing": "^3.0.0"
   }
 }
