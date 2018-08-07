@@ -2,7 +2,7 @@
 
 # Osseus Router
 
-[JSON Routes](https://github.com/gimox/json-routing) based osseus module to work with [osseus-server](https://github.com/colucom/osseus-server)
+[JSON Routes (for osseus)](https://github.com/colucom/json-routing) based osseus module to work with [osseus-server](https://github.com/colucom/osseus-server)
 
 ## Install
 ```bash
@@ -134,7 +134,7 @@ will result in:
 $ {"called":"examplePOST","policies":["firstPolicy","secondPolicy"]}
 ```
 
-More detailed examples can be found [here](https://github.com/gimox/json-routing)
+More detailed examples can be found [here](https://github.com/colucom/json-routing)
 
 ## License
 Code released under the [MIT License](https://github.com/colucom/osseus-router/blob/master/LICENSE).
