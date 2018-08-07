@@ -17,6 +17,6 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "json-routing": "^3.0.0"
+    "json-routing-for-osseus": "^4.0.0"
   }
 }
