@@ -136,5 +136,8 @@ $ {"called":"examplePOST","policies":["firstPolicy","secondPolicy"]}
 
 More detailed examples can be found [here](https://github.com/colucom/json-routing)
 
+## Contributing
+Please see [contributing guidelines](https://github.com/colucom/osseus-router/blob/master/.github/CONTRIBUTING.md).
+
 ## License
 Code released under the [MIT License](https://github.com/colucom/osseus-router/blob/master/LICENSE).
