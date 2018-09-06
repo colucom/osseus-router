@@ -32,6 +32,8 @@ Optional:
 	* default is `./policy`
 * `OSSEUS_ROUTER_URL_PREFIX`
 	* global prefix path for all routes
+* `OSSEUS_ROUTER_CONTROLLER_NAME_NO_UPPERCASE`
+  * set to `true` in order for contorller names not to begin with uppercase (which is the default)
 
 #### Example
 
