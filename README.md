@@ -6,7 +6,7 @@
 
 ## Install
 ```bash
-$ npm install osseus-router
+$ npm install @colucom/osseus-router
 ```
 
 ## Usage
