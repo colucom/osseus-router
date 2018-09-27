@@ -1,5 +1,5 @@
 {
-  "name": "osseus-router",
+  "name": "@colucom/osseus-router",
   "version": "0.3.1",
   "description": "Osseus Router",
   "scripts": {
